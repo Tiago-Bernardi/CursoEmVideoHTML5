@@ -1,5 +1,10 @@
 @charset "UTF-8";
 
+/*
+Edição da imagem,configuração do arquivo CSS.
+É necessário memorizar os inúmeros comandos!
+*/
+
 body {
     background-color: white;
     color: rgba(0, 0, 0, 1);
