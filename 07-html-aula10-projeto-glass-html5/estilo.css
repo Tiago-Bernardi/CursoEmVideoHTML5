@@ -1,9 +1,4 @@
-@charset "UTF-8";
-
-/*
-Edição da imagem, configuração do arquivo CSS.
-É necessário memorizar os inúmeros comandos!
-*/
+@charset "UTF-8"; /*lingua latina*/
 
 body {
     background-color: white;
@@ -14,30 +9,39 @@ body {
         text-indent: 50px;
     }
 
-figure.foto-legenda {
-   position: relative;
-   border: 8px solid white;
-   box-shadow: 1px 1px 4px black;
+/* Formatação de imagens com legenda */
+
+/* figure.foto-legenda { 
+ * faz a ponte entre a classe <figure class="foto-legenda"> dentro do html e a
+ * formatação do arquivo css figure (o ponto é referente a classe) foto-legenda logo
+ * figure.foto-legenda {} é um chamado para o html <figure class="foto-legenda">
+ */
+
+                              /*figure é pai do figcaption, ou seja, figcaption é um objeto container de figure*/
+figure.foto-legenda {         /*colocando como relativo eu amarro a legenda na posição top 0 dentro da imagem*/
+   position: relative;        /*sem isso minha sombra e minha legenda ficam presos no topo da página*/
+   border: 8px solid white;           /*borda na imagem*/
+   box-shadow: 1px 1px 4px black;     /*borda na imagem sombreada*/
 }
 
-figure.foto-legenda img {
-    width: 100%;
-    height: 100%;
+figure.foto-legenda img {     /*a borda acompanha a imagem*/
+    width: 100%;     /*largura*/
+    height: 100%;    /*altura*/
 }
 
-figure.foto-legenda figcaption {
-    opacity: 0;
-    position: absolute;
-    top: 0px;
-    background-color: rgba(0, 0, 0, 0.4);
-    color: white;
-    width: 100%;
-    height: 100%;
-    padding: 10px;
-    box-sizing: border-box;
-    transition: opacity 1s;
+figure.foto-legenda figcaption {     
+    opacity: 0;     /*esconde a legenda para ela aparecer somente quando passar o mouse em cima da imagem*/
+    position: absolute;     /*posição fora do container, posição fora da borda branca, a legenda foi parar*/
+    top: 0px;               /*no topo da página, na posição topo = 0* fora do container, fora da borda branca*/
+    background-color: rgba(0, 0, 0, 0.4);     /*cria uma sombra (camada transparente) em cima da imagem*/
+    color: white; /*deixa a letra da legenda na cor branca*/
+    width: 100%;    /*faz com que a camada/fundo preto fique em toda a imagem*/
+    height: 100%;   /*faz com que a camada/fundo preto fique em toda a imagem*/
+    padding: 10px;  /*cria um espaço entre a legenda e a imagem, porém desloca o fundo transpassando a borda */
+    box-sizing: border-box; /*cria um box dentro da borda corrigindo o erro do padding */
+    transition: opacity 1s; /*cria uma transição para a opacidade demorar 1 segundo*/
 }
 
-figure.foto-legenda:hover figcaption {
-     opacity: 1;
+figure.foto-legenda:hover figcaption {  /*acerta o erro do opacity: 0; criando o efeito quando passo o mouse*/
+     opacity: 1;                        /*por cima da imagem, criando uma opacidade de 1 = 100%*/
 }
